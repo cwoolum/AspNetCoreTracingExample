@@ -1,0 +1,99 @@
+2020-02-05 14:38:17.852 -08:00 [INF] Now listening on: https://localhost:5001
+2020-02-05 14:38:17.868 -08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-02-05 14:38:17.869 -08:00 [INF] Hosting environment: Development
+2020-02-05 14:38:17.870 -08:00 [INF] Content root path: C:\Users\Chris\source\scratch\Tracing\Tracing\Tracing.FrontEnd
+2020-02-05 14:38:18.994 -08:00 [INF] Start processing HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:18.999 -08:00 [INF] Sending HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:19.159 -08:00 [INF] Received HTTP response after 157.4615ms - "OK"
+2020-02-05 14:38:19.164 -08:00 [INF] End processing HTTP request after 174.0787ms - "OK"
+2020-02-05 14:38:19.447 -08:00 [ERR] HTTP GET /weatherforecast responded 500 in 527.168 ms
+System.Net.Http.HttpRequestException: Error while copying content to a stream.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ChunkedEncodingReadStream.CopyToAsyncCore(Stream destination, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionResponseContent.SerializeToStreamAsync(Stream stream, TransportContext context, CancellationToken cancellationToken)
+   at System.Net.Http.HttpContent.LoadIntoBufferAsyncCore(Task serializeToStreamTask, MemoryStream tempBuffer)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.LoadIntoBufferAsyncCore(Task serializeToStreamTask, MemoryStream tempBuffer)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Tracing.FrontEnd.BackendApiClient.GetForecast() in C:\Users\Chris\source\scratch\Tracing\Tracing\Tracing.FrontEnd\BackendApiClient.cs:line 19
+   at Tracing.FrontEnd.Controllers.WeatherForecastController.Get() in C:\Users\Chris\source\scratch\Tracing\Tracing\Tracing.FrontEnd\Controllers\WeatherForecastController.cs:line 37
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Tracing.Shared.LogHeadersMiddleware.Invoke(HttpContext context) in C:\Users\Chris\source\scratch\Tracing\Tracing\Tracing.Shared\Class1.cs:line 29
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2020-02-05 14:38:19.501 -08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Error while copying content to a stream.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ChunkedEncodingReadStream.CopyToAsyncCore(Stream destination, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionResponseContent.SerializeToStreamAsync(Stream stream, TransportContext context, CancellationToken cancellationToken)
+   at System.Net.Http.HttpContent.LoadIntoBufferAsyncCore(Task serializeToStreamTask, MemoryStream tempBuffer)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.LoadIntoBufferAsyncCore(Task serializeToStreamTask, MemoryStream tempBuffer)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Tracing.FrontEnd.BackendApiClient.GetForecast() in C:\Users\Chris\source\scratch\Tracing\Tracing\Tracing.FrontEnd\BackendApiClient.cs:line 19
+   at Tracing.FrontEnd.Controllers.WeatherForecastController.Get() in C:\Users\Chris\source\scratch\Tracing\Tracing\Tracing.FrontEnd\Controllers\WeatherForecastController.cs:line 37
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Tracing.Shared.LogHeadersMiddleware.Invoke(HttpContext context) in C:\Users\Chris\source\scratch\Tracing\Tracing\Tracing.Shared\Class1.cs:line 29
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2020-02-05 14:38:26.214 -08:00 [INF] Start processing HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:26.217 -08:00 [INF] Sending HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:26.245 -08:00 [INF] Received HTTP response after 28.3383ms - "OK"
+2020-02-05 14:38:26.246 -08:00 [INF] End processing HTTP request after 32.3666ms - "OK"
+2020-02-05 14:38:26.376 -08:00 [INF] Parent TraceId: 
+2020-02-05 14:38:26.378 -08:00 [INF] HTTP GET /weatherforecast responded 200 in 164.565 ms
+2020-02-05 14:38:27.105 -08:00 [INF] Start processing HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:27.107 -08:00 [INF] Sending HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:27.133 -08:00 [INF] Received HTTP response after 25.3379ms - "OK"
+2020-02-05 14:38:27.134 -08:00 [INF] End processing HTTP request after 29.2687ms - "OK"
+2020-02-05 14:38:27.138 -08:00 [INF] Parent TraceId: 00-255161bdb1057543a2fc1ffe072b8065-183cb9ec78231a4d-00
+2020-02-05 14:38:27.139 -08:00 [INF] HTTP GET /WeatherForecast responded 200 in 35.3446 ms
+2020-02-05 14:38:37.165 -08:00 [INF] Start processing HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:37.167 -08:00 [INF] Sending HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:37.184 -08:00 [INF] Received HTTP response after 17.2011ms - "OK"
+2020-02-05 14:38:37.185 -08:00 [INF] End processing HTTP request after 19.7045ms - "OK"
+2020-02-05 14:38:37.189 -08:00 [INF] Parent TraceId: 00-84a2a041eec8804ba4110b37358d2728-87282629eb164043-00
+2020-02-05 14:38:37.190 -08:00 [INF] HTTP GET /WeatherForecast responded 200 in 25.229 ms
+2020-02-05 14:38:47.215 -08:00 [INF] Start processing HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:47.218 -08:00 [INF] Sending HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:47.234 -08:00 [INF] Received HTTP response after 16.5112ms - "OK"
+2020-02-05 14:38:47.235 -08:00 [INF] End processing HTTP request after 20.0166ms - "OK"
+2020-02-05 14:38:47.238 -08:00 [INF] Parent TraceId: 00-174690b281866c409249f946b26b8463-e04524aedf4b5e45-00
+2020-02-05 14:38:47.239 -08:00 [INF] HTTP GET /WeatherForecast responded 200 in 24.1784 ms
+2020-02-05 14:38:57.255 -08:00 [INF] Start processing HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:57.258 -08:00 [INF] Sending HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:38:57.274 -08:00 [INF] Received HTTP response after 16.3713ms - "OK"
+2020-02-05 14:38:57.275 -08:00 [INF] End processing HTTP request after 19.8735ms - "OK"
+2020-02-05 14:38:57.277 -08:00 [INF] Parent TraceId: 00-f773852320f8ec40a1605d951d7211be-3017b3b3476efb40-00
+2020-02-05 14:38:57.278 -08:00 [INF] HTTP GET /WeatherForecast responded 200 in 23.4917 ms
+2020-02-05 14:39:07.288 -08:00 [INF] Start processing HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:39:07.290 -08:00 [INF] Sending HTTP request GET "https://localhost:5002/WeatherForecast"
+2020-02-05 14:39:07.305 -08:00 [INF] Received HTTP response after 15.269ms - "OK"
+2020-02-05 14:39:07.306 -08:00 [INF] End processing HTTP request after 18.0042ms - "OK"
+2020-02-05 14:39:07.309 -08:00 [INF] Parent TraceId: 00-0071675e290106428472cf1457530288-aeb6f8165951e349-00
+2020-02-05 14:39:07.310 -08:00 [INF] HTTP GET /WeatherForecast responded 200 in 22.446 ms
