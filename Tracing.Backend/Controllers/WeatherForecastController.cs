@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +27,7 @@ namespace Tracing.Backend.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            Console.WriteLine("Trace Id: " + HttpContext.TraceIdentifier);
+            Console.WriteLine("Trace Id: " + Activity.Current?.Id);
 
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

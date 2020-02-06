@@ -6,8 +6,6 @@ using Microsoft.Extensions.Hosting;
 
 using Serilog;
 
-using System.Diagnostics;
-
 namespace Tracing.Backend
 {
     public class Startup
@@ -22,8 +20,6 @@ namespace Tracing.Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            Activity.DefaultIdFormat = ActivityIdFormat.W3C;
-
             services.AddControllers();
         }
 

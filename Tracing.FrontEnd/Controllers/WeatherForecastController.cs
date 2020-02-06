@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace Tracing.FrontEnd.Controllers
         [HttpGet]
         public async Task<IEnumerable<WeatherForecast>> Get()
         {
-            Console.WriteLine("Trace Id: " + HttpContext.TraceIdentifier);
+            Console.WriteLine("Trace Id: " + Activity.Current?.Id);
 
             return await _client.GetForecast();
         }
